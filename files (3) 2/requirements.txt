@@ -1,0 +1,21 @@
+# Core (teacher + dataset + quantization). Python 3.10+ recommended.
+torch
+torchvision
+transformers>=4.41          # provides OWLv2 (Owlv2Processor / Owlv2ForObjectDetection)
+pillow
+numpy
+tqdm
+onnx
+onnxruntime                  # use onnxruntime-gpu if quantizing/calibrating on GPU
+
+# Optional: Open Images collection + dataset visual QA
+fiftyone
+
+# Student detector (pick ONE; see GUIDE Stage 5):
+rfdetr                       # RF-DETR (Roboflow, Apache-2.0) -- simplest training API
+# YOLOX is installed from source instead:
+#   git clone https://github.com/Megvii-BaseDetection/YOLOX && cd YOLOX && pip install -e .
+
+# Deployment converters (install as needed, see GUIDE Stage 8):
+# onnx2tf                    # ONNX -> TFLite / LiteRT
+# pnnx / ncnn tools          # ONNX -> NCNN
